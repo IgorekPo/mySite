@@ -1,6 +1,5 @@
 .header {
    background-color: #000;
-   color: #fff;
    &__container {
       display: flex;
       justify-content: space-between;
@@ -30,9 +29,73 @@
       }
    }
 
-   &__nav {
+   &__links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      @media (max-width: 768px) {
+         display: none;
+      }
+   }
+   &__link {
+      color: #fff;
+      transition: all 0.5s ease;
+      @media (hover: hover) {
+         &:hover {
+            color: #37a8f6;
+            // color: #2360bd;
+         }
+      }
    }
 
    &__burger {
+      display: none;
+      width: 40px;
+      height: 30px;
+      position: relative;
+      cursor: pointer;
+
+      @media (max-width: 768px) {
+         display: block;
+      }
+      &.active span {
+         opacity: 0;
+      }
+      &.active::before {
+         transform: rotate(45deg);
+         top: 48%;
+         background-color: #37a8f6;
+      }
+      &.active::after {
+         transform: rotate(-45deg);
+         bottom: 48%;
+         background-color: #37a8f6;
+      }
+      & span {
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         background-color: #fff;
+         top: 50%;
+         left: 0;
+         transform: translate(0, -50%);
+         transition: all 0.5s ease;
+      }
+      &::before,
+      &::after {
+         content: "";
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         background-color: #fff;
+         left: 0;
+         transition: all 0.5s ease;
+      }
+      &::before {
+         top: 0;
+      }
+      &::after {
+         bottom: 0;
+      }
    }
 }

@@ -7,3 +7,15 @@ window.addEventListener('load', () => {
     content.style.display = 'block';
   }, 4000); 
 });
+
+
+//  BURGER ===================================================
+
+const burger = document.querySelector('.header__burger');
+
+burger.addEventListener('click', () => {
+   burger.classList.toggle('active');
+   
+});
+
+// ============================================================
