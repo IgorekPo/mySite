@@ -176,9 +176,20 @@ main {
           align-items: center;
   height: 100px;
 }
+@media (max-width: 607.98px) {
+  .header__container {
+    height: 80px;
+  }
+}
 .header__logo {
   width: 90px;
   height: 85px;
+}
+@media (max-width: 607.98px) {
+  .header__logo {
+    width: 70px;
+    height: 65px;
+  }
 }
 .header__logo img {
   width: 100%;
