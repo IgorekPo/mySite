@@ -13,10 +13,16 @@ window.addEventListener('load', () => {
 
 const burger = document.querySelector('.header__burger');
 const headerLinks = document.querySelector('.header__links');
+
 burger.addEventListener('click', () => {
    burger.classList.toggle('active');
    headerLinks.classList.toggle('active');
-
 });
 
+document.addEventListener('click', (e) => {
+   if (!burger.contains(e.target) && !headerLinks.contains(e.target)) {
+      burger.classList.remove('active');
+      headerLinks.classList.remove('active');
+   }
+});
 // ============================================================

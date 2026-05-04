@@ -240,7 +240,6 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 35px;
     background-color: #000;
     padding: 60px 0;
     font-size: 18px;
