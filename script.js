@@ -12,10 +12,11 @@ window.addEventListener('load', () => {
 //  BURGER ===================================================
 
 const burger = document.querySelector('.header__burger');
-
+const headerLinks = document.querySelector('.header__links');
 burger.addEventListener('click', () => {
    burger.classList.toggle('active');
-   
+   headerLinks.classList.toggle('active');
+
 });
 
 // ============================================================
