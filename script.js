@@ -5,5 +5,5 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     loader.style.display = 'none';
     content.style.display = 'block';
-  }, 3000); 
+  }, 4000); 
 });
