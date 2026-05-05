@@ -318,6 +318,11 @@ body {
   height: 2px;
   background: #fbd784;
 }
+@media (max-width: 375px) {
+  .herro__name::before {
+    width: 40px;
+  }
+}
 .herro__title {
   font-size: clamp(22px, 5vw, 56px);
   line-height: 1.1;
@@ -369,6 +374,7 @@ body {
   max-width: 260px;
   top: 50%;
   right: 5%;
+  opacity: 0.8;
 }
 
 .layer-s-icon {
@@ -383,6 +389,7 @@ body {
   max-width: 260px;
   bottom: 5%;
   left: 5%;
+  opacity: 0.6;
 }
 
 @media (max-width: 425px) {

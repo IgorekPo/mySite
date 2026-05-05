@@ -37,6 +37,9 @@
          width: 60px;
          height: 2px;
          background: #fbd784;
+         @media (max-width: 375px) {
+            width: 40px;
+         }
       }
    }
 
@@ -86,6 +89,7 @@
    max-width: 260px;
    top: 50%;
    right: 5%;
+   opacity: 0.8;
 }
 
 .layer-s-icon {
@@ -100,6 +104,7 @@
    max-width: 260px;
    bottom: 5%;
    left: 5%;
+   opacity: 0.6;
 }
 
 @media (max-width: 425px) {
