@@ -11,13 +11,11 @@ window.addEventListener('load', () => {
   }, 4000); 
 });
 
-// ===========================================================
+// PARALAX - HERRO ===========================================================
 const layers = document.querySelectorAll('.parallax-layer');
 const bg = document.querySelector('.parallax-bg');
 
-// Функция для обновления позиций
 function updateParallax(offsetX, offsetY) {
-    // Двигаем фон (коэффициент 0.2 для мягкости)
     bg.style.transform = `scale(1.1) translate(${offsetX * 0.3}px, ${offsetY * 0.3}px)`;
 
     layers.forEach(layer => {
@@ -33,7 +31,6 @@ function updateParallax(offsetX, offsetY) {
     });
 }
 
-// 1. Движение мышью (Десктоп)
 if (window.innerWidth > 1024) {
     document.addEventListener("mousemove", (e) => {
         const x = (e.clientX - window.innerWidth / 2) / 50;
@@ -42,20 +39,16 @@ if (window.innerWidth > 1024) {
     });
 }
 
-// 2. Движение гироскопом (Мобильные 320px-425px)
 if (window.DeviceOrientationEvent) {
     window.addEventListener("deviceorientation", (e) => {
-        // gamma: наклон влево-вправо (-90 до 90)
-        // beta: наклон вперед-назад (-180 до 180)
         if (window.innerWidth <= 1024) {
-            const x = e.gamma * 1.1; // Чувствительность
-            const y = (e.beta - 45) *1.1; // 45 градусов - среднее положение в руках
+            const x = e.gamma * 1.1; 
+            const y = (e.beta - 45) *1.1; 
             updateParallax(x, y);
         }
     });
 }
 
-// Запрос разрешения для iOS 13+
 if (typeof DeviceOrientationEvent.requestPermission === 'function') {
     document.body.addEventListener('click', function() {
         DeviceOrientationEvent.requestPermission()
