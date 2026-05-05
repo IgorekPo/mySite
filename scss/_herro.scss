@@ -20,12 +20,24 @@
       z-index: 10;
       color: #fff;
       padding-top: 140px;
+      text-shadow: 2px 1px 4px #000;
    }
 
    &__name {
       font-size: clamp(10px, 2vw, 18px);
       text-transform: uppercase;
       letter-spacing: 2px;
+      color: #fbd784;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      text-align: center;
+      &::before {
+         content: "";
+         width: 60px;
+         height: 2px;
+         background: #fbd784;
+      }
    }
 
    &__title {
