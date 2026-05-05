@@ -94,7 +94,7 @@
 
 .layer-s-icon {
    width: 16vw;
-   max-width: 180px;
+   max-width: 80px;
    bottom: 20%;
    right: 10%;
 }
@@ -104,7 +104,6 @@
    max-width: 260px;
    bottom: 5%;
    left: 5%;
-   opacity: 0.6;
 }
 
 @media (max-width: 425px) {
@@ -123,7 +122,7 @@
    .layer-s-icon {
       bottom: 25%;
       right: 5%;
-      width: 60px;
+      width: 40px;
    }
    .layer-cursor {
       width: 100px;
