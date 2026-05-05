@@ -15,32 +15,33 @@
    &__informations {
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 20px;
       justify-content: center;
       z-index: 10;
       color: #fff;
-      margin-bottom: 40px;
+      padding-top: 140px;
    }
 
    &__name {
-      font-size: clamp(14px, 2vw, 18px);
+      font-size: clamp(10px, 2vw, 18px);
       text-transform: uppercase;
       letter-spacing: 2px;
    }
 
    &__title {
-      font-size: clamp(26px, 5vw, 56px);
+      font-size: clamp(22px, 5vw, 56px);
       line-height: 1.1;
       font-weight: 800;
    }
 
    &__text {
-      font-size: clamp(14px, 1.8vw, 20px);
+      font-size: clamp(12px, 1.8vw, 20px);
+      letter-spacing: 2px;
+      line-height: 1.1;
    }
 }
 .parallax-bg {
    position: absolute;
-   top: -15%;
    left: -15%;
    width: 130%;
    height: 130%;
