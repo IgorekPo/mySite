@@ -43,7 +43,7 @@ if (window.DeviceOrientationEvent) {
     window.addEventListener("deviceorientation", (e) => {
         if (window.innerWidth <= 1024) {
             const x = e.gamma * 1.1; 
-            const y = (e.beta - 45) *1.1; 
+            const y = (e.beta - 30) *1.1; 
             updateParallax(x, y);
         }
     });
