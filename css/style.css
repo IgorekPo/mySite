@@ -264,6 +264,7 @@ body {
   color: #fff;
 }
 
+/* Параллакс элементы */
 .herro {
   position: relative;
   width: 100%;
@@ -276,10 +277,41 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #000; /* Запасной цвет */
+  background: #000;
+}
+.herro__container {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 20px;
+}
+.herro__me {
+  position: relative;
+  text-align: center;
+  margin-top: clamp(40px, 10vh, 100px);
+  z-index: 10;
+  color: #fff;
+}
+.herro__name {
+  font-size: clamp(14px, 2vw, 18px);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.herro__title {
+  font-size: clamp(26px, 5vw, 56px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+.herro__text {
+  font-size: clamp(14px, 1.8vw, 20px);
+  max-width: 650px;
+  margin: 0 auto;
+  opacity: 0.8;
 }
 
-/* Фон с запасом для движения */
 .parallax-bg {
   position: absolute;
   top: -15%;
@@ -291,45 +323,6 @@ body {
   will-change: transform;
 }
 
-.herro__container {
-  position: relative;
-  z-index: 5;
-  width: 100%;
-  max-width: 1440px;
-  padding: 0 20px;
-}
-
-/* Адаптивный текст */
-.herro__me {
-  position: relative;
-  text-align: center;
-  margin-top: clamp(40px, 10vh, 100px);
-  z-index: 10;
-  color: #fff;
-}
-
-.herro__name {
-  font-size: clamp(14px, 2vw, 18px);
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.herro__title {
-  font-size: clamp(26px, 5vw, 56px);
-  line-height: 1.1;
-  margin-bottom: 20px;
-  font-weight: 800;
-}
-
-.herro__text {
-  font-size: clamp(14px, 1.8vw, 20px);
-  max-width: 650px;
-  margin: 0 auto;
-  opacity: 0.8;
-}
-
-/* Параллакс элементы */
 .parallax-scene {
   position: absolute;
   inset: 0;
@@ -356,24 +349,24 @@ body {
 }
 
 .layer-gear {
-  width: 12vw;
-  max-width: 160px;
+  width: 24vw;
+  max-width: 260px;
   top: 50%;
   right: 5%;
 }
 
 .layer-s-icon {
-  width: 10vw;
-  max-width: 130px;
+  width: 16vw;
+  max-width: 180px;
   bottom: 20%;
   right: 10%;
 }
 
 .layer-cursor {
-  width: 8vw;
-  max-width: 100px;
-  bottom: 15%;
-  left: 10%;
+  width: 32vw;
+  max-width: 260px;
+  bottom: 5%;
+  left: 5%;
 }
 
 @media (max-width: 425px) {
@@ -387,16 +380,15 @@ body {
   .layer-gear {
     top: 60%;
     right: 2%;
-    width: 60px;
+    width: 120px;
   }
   .layer-s-icon {
     bottom: 25%;
     right: 5%;
-    width: 50px;
+    width: 60px;
   }
   .layer-cursor {
-    bottom: 20%;
-    left: 5%;
-    width: 40px;
+    width: 100px;
+    bottom: 10%;
   }
 }
