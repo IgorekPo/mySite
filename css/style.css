@@ -306,7 +306,6 @@ body {
   margin-top: clamp(40px, 10vh, 100px);
   z-index: 10;
   color: #fff;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .herro__name {
