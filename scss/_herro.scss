@@ -70,7 +70,6 @@
    transition: transform 0.15s ease-out;
 }
 
-/* Позиционирование (адаптивное) */
 .layer-laptop {
    width: 70vw;
    max-width: 900px;
@@ -100,11 +99,10 @@
    left: 10%;
 }
 
-/* Адаптив для мобильных (320px - 425px) */
 @media (max-width: 425px) {
    .herro {
       height: 100dvh;
-   } /* Dynamic viewport height для мобил */
+   }
    .layer-laptop {
       width: 95vw;
       bottom: 10%;
