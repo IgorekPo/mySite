@@ -48,8 +48,8 @@ if (window.DeviceOrientationEvent) {
         // gamma: наклон влево-вправо (-90 до 90)
         // beta: наклон вперед-назад (-180 до 180)
         if (window.innerWidth <= 1024) {
-            const x = e.gamma * 5.5; // Чувствительность
-            const y = (e.beta - 45) * 5.5; // 45 градусов - среднее положение в руках
+            const x = e.gamma * 1.5; // Чувствительность
+            const y = (e.beta - 45) * 1.5; // 45 градусов - среднее положение в руках
             updateParallax(x, y);
         }
     });
