@@ -18,12 +18,12 @@ const bg = document.querySelector('.parallax-bg');
 // Функция для обновления позиций
 function updateParallax(offsetX, offsetY) {
     // Двигаем фон (коэффициент 0.2 для мягкости)
-    bg.style.transform = `scale(1.1) translate(${offsetX * 0.2}px, ${offsetY * 0.2}px)`;
+    bg.style.transform = `scale(1.1) translate(${offsetX * 0.3}px, ${offsetY * 0.3}px)`;
 
     layers.forEach(layer => {
         const speed = layer.getAttribute('data-speed');
-        const x = (offsetX * speed) / 10;
-        const y = (offsetY * speed) / 10;
+        const x = (offsetX * speed) / 5;
+        const y = (offsetY * speed) / 5;
 
         if (layer.classList.contains('layer-laptop')) {
             layer.style.transform = `translateX(calc(-50% + ${x}px)) translateY(${y}px)`;
@@ -36,8 +36,8 @@ function updateParallax(offsetX, offsetY) {
 // 1. Движение мышью (Десктоп)
 if (window.innerWidth > 1024) {
     document.addEventListener("mousemove", (e) => {
-        const x = (e.clientX - window.innerWidth / 2) / 100;
-        const y = (e.clientY - window.innerHeight / 2) / 100;
+        const x = (e.clientX - window.innerWidth / 2) / 50;
+        const y = (e.clientY - window.innerHeight / 2) / 50;
         updateParallax(x, y);
     });
 }
@@ -48,8 +48,8 @@ if (window.DeviceOrientationEvent) {
         // gamma: наклон влево-вправо (-90 до 90)
         // beta: наклон вперед-назад (-180 до 180)
         if (window.innerWidth <= 1024) {
-            const x = e.gamma * 1.5; // Чувствительность
-            const y = (e.beta - 45) * 1.5; // 45 градусов - среднее положение в руках
+            const x = e.gamma * 5.5; // Чувствительность
+            const y = (e.beta - 45) * 5.5; // 45 градусов - среднее положение в руках
             updateParallax(x, y);
         }
     });
