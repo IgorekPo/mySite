@@ -3,8 +3,7 @@
    &__container {
       transform: translateY(50px);
       transition: all 0.8s ease-out;
-      position: relative;
-      z-index: 5;
+      z-index: 2;
       &.visible {
          transform: translateY(0px);
       }

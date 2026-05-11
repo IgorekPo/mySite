@@ -304,8 +304,7 @@ body {
           transform: translateY(50px);
   -webkit-transition: all 0.8s ease-out;
   transition: all 0.8s ease-out;
-  position: relative;
-  z-index: 5;
+  z-index: 2;
 }
 .herro__container.visible {
   -webkit-transform: translateY(0px);
