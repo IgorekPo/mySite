@@ -13,10 +13,12 @@ window.addEventListener('load', () => {
 
 // PARALAX - HERRO ===========================================================
 const layers = document.querySelectorAll('.parallax-layer');
-const bg = document.querySelector('.parallax-bg');
+const bg = document.querySelectorAll('.parallax-bg');
 
 function updateParallax(offsetX, offsetY) {
-    bg.style.transform = `scale(1.1) translate(${offsetX * 0.3}px, ${offsetY * 0.3}px)`;
+    bg.forEach(bg => {
+        bg.style.transform = `scale(1.1) translate(${offsetX * 0.3}px, ${offsetY * 0.3}px)`;
+    });
 
     layers.forEach(layer => {
         const speed = layer.getAttribute('data-speed');
@@ -60,3 +62,27 @@ if (typeof DeviceOrientationEvent.requestPermission === 'function') {
             .catch(console.error);
     }, { once: true });
 }
+
+
+// SECTION SMOOTH SCROLL ===========================================================
+const observerOptions = {
+  root: null, // следим относительно окна браузера
+  threshold: 0.5, // сработает, когда 50% блока будет в кадре
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Находим контент внутри текущей секции и добавляем класс
+      entry.target.querySelector(".__container").classList.add("visible");
+    } else {
+      // Если хотите, чтобы при скролле назад анимация повторялась:
+      entry.target.querySelector(".__container").classList.remove("visible");
+    }
+  });
+}, observerOptions);
+
+// Запускаем наблюдение за всеми панелями
+document.querySelectorAll(".panel").forEach((panel) => {
+  observer.observe(panel);
+});

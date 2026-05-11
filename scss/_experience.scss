@@ -1,0 +1,12 @@
+.experience {
+   &__container {
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+      &.visible {
+         transform: translateY(0px);
+      }
+   }
+}
+.parallax-bg--experience {
+   background: url("../img/bg_experience.jpg") center/cover no-repeat;
+}

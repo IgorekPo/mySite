@@ -1,0 +1,12 @@
+.about {
+   &__container {
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+      &.visible {
+         transform: translateY(0px);
+      }
+   }
+}
+.parallax-bg--about {
+   background: url("../img/bg_about.jpg") center/cover no-repeat;
+}

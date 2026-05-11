@@ -3,3 +3,15 @@
 @use "./_header";
 @use "./fonts";
 @use "./herro";
+@use "./about";
+@use "./works";
+@use "./experience";
+
+.parallax-bg {
+   position: absolute;
+   left: -15%;
+   width: 130%;
+   height: 130%;
+   z-index: 1;
+   will-change: transform;
+}

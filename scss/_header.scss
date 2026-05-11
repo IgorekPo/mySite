@@ -48,9 +48,12 @@
    &__links {
       display: flex;
       align-items: center;
-      gap: 50px;
-      @media (max-width: 399.98px) {
-         gap: 24px;
+      gap: 30px;
+      flex-wrap: wrap;
+      @media (max-width: 437.98px) {
+         row-gap: 16px;
+         column-gap: 20px;
+         justify-content: flex-end;
       }
    }
    &__link {
