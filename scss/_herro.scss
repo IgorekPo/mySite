@@ -1,12 +1,7 @@
 // ========================
 .herro {
    &__container {
-      transform: translateY(50px);
-      transition: all 0.8s ease-out;
       z-index: 2;
-      &.visible {
-         transform: translateY(0px);
-      }
    }
 
    &__informations {

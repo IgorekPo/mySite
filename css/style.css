@@ -299,17 +299,7 @@ body {
 }
 
 .herro__container {
-  -webkit-transform: translateY(50px);
-      -ms-transform: translateY(50px);
-          transform: translateY(50px);
-  -webkit-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out;
   z-index: 2;
-}
-.herro__container.visible {
-  -webkit-transform: translateY(0px);
-      -ms-transform: translateY(0px);
-          transform: translateY(0px);
 }
 .herro__informations {
   display: -webkit-box;
@@ -439,16 +429,7 @@ body {
   }
 }
 .about__container {
-  -webkit-transform: translateY(50px);
-      -ms-transform: translateY(50px);
-          transform: translateY(50px);
-  -webkit-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out;
-}
-.about__container.visible {
-  -webkit-transform: translateY(0px);
-      -ms-transform: translateY(0px);
-          transform: translateY(0px);
+  z-index: 2;
 }
 
 .parallax-bg--about {
@@ -456,16 +437,7 @@ body {
 }
 
 .works__container {
-  -webkit-transform: translateY(50px);
-      -ms-transform: translateY(50px);
-          transform: translateY(50px);
-  -webkit-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out;
-}
-.works__container.visible {
-  -webkit-transform: translateY(0px);
-      -ms-transform: translateY(0px);
-          transform: translateY(0px);
+  z-index: 2;
 }
 
 .parallax-bg--works {
@@ -473,16 +445,7 @@ body {
 }
 
 .experience__container {
-  -webkit-transform: translateY(50px);
-      -ms-transform: translateY(50px);
-          transform: translateY(50px);
-  -webkit-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out;
-}
-.experience__container.visible {
-  -webkit-transform: translateY(0px);
-      -ms-transform: translateY(0px);
-          transform: translateY(0px);
+  z-index: 2;
 }
 
 .parallax-bg--experience {

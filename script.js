@@ -65,24 +65,7 @@ if (typeof DeviceOrientationEvent.requestPermission === 'function') {
 
 
 // SECTION SMOOTH SCROLL ===========================================================
-const observerOptions = {
-  root: null, // следим относительно окна браузера
-  threshold: 0.5, // сработает, когда 50% блока будет в кадре
-};
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      // Находим контент внутри текущей секции и добавляем класс
-      entry.target.querySelector(".__container").classList.add("visible");
-    } else {
-      // Если хотите, чтобы при скролле назад анимация повторялась:
-      entry.target.querySelector(".__container").classList.remove("visible");
-    }
-  });
-}, observerOptions);
-
-// Запускаем наблюдение за всеми панелями
 document.querySelectorAll(".panel").forEach((panel) => {
   observer.observe(panel);
 });
