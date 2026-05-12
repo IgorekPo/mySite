@@ -48,7 +48,10 @@
    }
 }
 .parallax-bg--hero {
-   background: url("../img/bg_main.jpg") center/cover no-repeat;
+   background: url("../img/345.jpg") no-repeat;
+   background-size: cover;
+   background-position: center;
+   // background-size: 190% 100%;
 }
 .parallax-scene {
    position: absolute;

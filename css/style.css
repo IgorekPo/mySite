@@ -100,6 +100,7 @@ section {
           justify-content: center;
   background: #000;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .main {
@@ -355,7 +356,9 @@ body {
 }
 
 .parallax-bg--hero {
-  background: url("../img/bg_main.jpg") center/cover no-repeat;
+  background: url("../img/345.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .parallax-scene {
@@ -433,7 +436,8 @@ body {
 }
 
 .parallax-bg--about {
-  background: url("../img/bg_about.jpg") center/cover no-repeat;
+  background: url("../img/bgabout.jpg") center/contain no-repeat;
+  background-size: 100% 100%;
 }
 
 .works__container {
@@ -449,14 +453,14 @@ body {
 }
 
 .parallax-bg--experience {
-  background: url("../img/bg_experience.jpg") center/cover no-repeat;
+  background: url("../img/bg3.jpg") center/contain no-repeat;
+  background-size: 180% 100%;
 }
 
 .parallax-bg {
   position: absolute;
-  left: -15%;
-  width: 130%;
-  height: 130%;
+  width: 110%;
+  height: 110%;
   z-index: 1;
   will-change: transform;
 }

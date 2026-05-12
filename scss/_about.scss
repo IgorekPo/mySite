@@ -4,5 +4,6 @@
    }
 }
 .parallax-bg--about {
-   background: url("../img/bg_about.jpg") center/cover no-repeat;
+   background: url("../img/bgabout.jpg") center/contain no-repeat;
+   background-size: 100% 100%;
 }
