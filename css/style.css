@@ -358,7 +358,7 @@ body {
 .parallax-bg--hero {
   background: url("../img/345.jpg") no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: -60px center;
 }
 
 .parallax-scene {
@@ -436,8 +436,7 @@ body {
 }
 
 .parallax-bg--about {
-  background: url("../img/bgabout.jpg") center/contain no-repeat;
-  background-size: 100% 100%;
+  background: url("../img/bgabout.jpg") center/cover no-repeat;
 }
 
 .works__container {
