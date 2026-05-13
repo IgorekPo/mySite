@@ -75,7 +75,6 @@ if (window.DeviceOrientationEvent) {
 
 // BURGER MENU ===========================================================
 
-
 const burgerMenu = document.querySelector ('.header__burger');
 const headerMenu = document.querySelector ('.header__links');
 

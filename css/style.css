@@ -262,9 +262,11 @@ section {
   transition: all 0.5s ease;
   font-size: clamp(14px, 4vw, 26px);
 }
-.header__phone:hover {
-  color: #34aaf0;
-  text-shadow: -1px 1px 15px #fff;
+@media (hover: hover) {
+  .header__phone:hover {
+    color: #34aaf0;
+    text-shadow: -1px 1px 15px #fff;
+  }
 }
 .header__links {
   display: -webkit-box;
