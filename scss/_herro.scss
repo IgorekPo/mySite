@@ -32,6 +32,7 @@
    & .layer-dust {
       background-image: url("../img/light-herro.png");
       z-index: 2;
+      margin-top: 60px;
    }
    & .gyro-btn {
       display: none; /* Скрыта по умолчанию */
@@ -60,8 +61,10 @@
       justify-content: center;
       z-index: 10;
       color: #fff;
-
-      text-shadow: 2px 1px 4px #000;
+      z-index: 5;
+      @media (max-width: 768px) {
+         padding-top: 120px;
+      }
       @media (max-width: 425px) {
          padding-top: 100px;
       }
@@ -76,6 +79,7 @@
       gap: 30px;
       align-items: center;
       text-align: center;
+      filter: drop-shadow(2px 2px 2px #000);
       &::before {
          content: "";
          width: 60px;
@@ -91,12 +95,14 @@
       font-size: clamp(22px, 5vw, 56px);
       line-height: 1.1;
       font-weight: 800;
+      filter: drop-shadow(2px 2px 2px #000);
    }
 
    &__text {
       font-size: clamp(12px, 1.8vw, 20px);
       letter-spacing: 2px;
       line-height: 1.1;
+      filter: drop-shadow(2px 2px 2px #000);
    }
 }
 
