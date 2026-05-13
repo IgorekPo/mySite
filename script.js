@@ -72,3 +72,32 @@ if (window.DeviceOrientationEvent) {
         window.addEventListener('deviceorientation', handleOrientation);
     }
 }
+
+// BURGER MENU ===========================================================
+
+
+const burgerMenu = document.querySelector ('.header__burger');
+const headerMenu = document.querySelector ('.header__links');
+
+burgerMenu.addEventListener('click' , ()=>{
+   burgerMenu.classList.toggle ('active');
+   headerMenu.classList.toggle ('active');
+})
+
+const menuLinks = document.querySelectorAll ('.header__link');
+
+menuLinks.forEach (link =>{
+   link.addEventListener('click',()=>{
+   burgerMenu.classList.remove ('active');
+   headerMenu.classList.remove ('active');
+   })
+})
+
+document.addEventListener ('click' , (e)=>{
+   if (headerMenu.classList.contains ('active') && !headerMenu.contains(e.target) && !burgerMenu.contains(e.target)){
+         burgerMenu.classList.remove ('active');
+   headerMenu.classList.remove ('active');
+   }
+})
+// ======================================================================
+

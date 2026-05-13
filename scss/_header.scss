@@ -12,6 +12,7 @@
       padding-top: 10px;
       padding-bottom: 10px;
       gap: 20px;
+      position: relative;
       @media (max-width: 580px) {
          height: 75px;
       }
@@ -41,29 +42,93 @@
          }
       }
    }
-
-   &__nav {
+   &__phone {
+      transition: all 0.5s ease;
+      font-size: clamp(14px, 4vw, 26px);
+      &:hover {
+         color: #34aaf0;
+         text-shadow: -1px 1px 15px #fff;
+      }
    }
-
    &__links {
       display: flex;
       align-items: center;
       gap: 30px;
       flex-wrap: wrap;
-      @media (max-width: 437.98px) {
-         row-gap: 16px;
-         column-gap: 20px;
-         justify-content: flex-end;
+      transition: all 0.5s ease-in-out;
+      @media (max-width: 768px) {
+         position: absolute;
+         top: 50vh;
+         left: 50vw;
+         transform: translate(-50%, -50%);
+         background-color: rgba(118, 118, 118, 0.624);
+         padding: 40px 60px;
+         flex-direction: column;
+         opacity: 0;
+         visibility: hidden;
+         line-height: 1.1;
+         font-weight: 800;
+         -webkit-filter: drop-shadow(2px 2px 2px #000);
+         filter: drop-shadow(2px 2px 2px #000);
+      }
+      &.active {
+         opacity: 1;
+         visibility: visible;
       }
    }
    &__link {
       transition: all 0.5s ease;
-      &:hover {
-         color: #34aaf0;
-         text-shadow: -1px 1px 15px #fff;
+      @media (hover: hover) {
+         &:hover {
+            color: #34aaf0;
+            text-shadow: -1px 1px 15px #fff;
+         }
       }
-      @media (max-width: 580px) {
-         font-size: 16px;
+   }
+   &__burger {
+      display: none;
+      width: 36px;
+      height: 20px;
+      position: relative;
+      cursor: pointer;
+      @media (max-width: 768px) {
+         display: block;
+      }
+      &.active {
+         & span {
+            opacity: 0;
+            visibility: hidden;
+         }
+         &::before {
+            transform: rotate(45deg);
+            top: 49%;
+         }
+         &::after {
+            transform: rotate(-45deg);
+            bottom: 45%;
+         }
+      }
+      & span,
+      &::before,
+      &::after {
+         transition: all 0.5s ease-in-out;
+
+         content: "";
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         background-color: #fff;
+         border-radius: 2px;
+      }
+      & span {
+         top: 50%;
+         transform: translateY(-50%);
+      }
+      &::before {
+         top: 0;
+      }
+      &::after {
+         bottom: 0;
       }
    }
 }
