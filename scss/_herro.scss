@@ -1,5 +1,54 @@
 // ========================
 .herro {
+   position: relative;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   &-layer {
+      position: absolute;
+      /* Увеличиваем размер, чтобы был запас для движения */
+      top: -5%;
+      left: -5%;
+      width: 105%;
+      height: 110%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      will-change: transform;
+      /* Плавный переход для мягкого движения */
+      transition: transform 0.2s cubic-bezier(0.2, 0.4, 0.3, 1);
+   }
+   & .layer-bg {
+      background-image: url("../img/bg-herro.jpg");
+      z-index: 2;
+   }
+   & .layer-code {
+      background-image: url("../img/code-herro.png");
+      z-index: 3;
+      filter: drop-shadow(2px 2px 15px #fff);
+   }
+   & .layer-dust {
+      background-image: url("../img/light-herro.png");
+      z-index: 2;
+   }
+   & .gyro-btn {
+      display: none; /* Скрыта по умолчанию */
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      font-size: 16px;
+      cursor: pointer;
+   }
    &__container {
       z-index: 2;
    }
@@ -11,8 +60,11 @@
       justify-content: center;
       z-index: 10;
       color: #fff;
-      padding-top: 140px;
+
       text-shadow: 2px 1px 4px #000;
+      @media (max-width: 425px) {
+         padding-top: 100px;
+      }
    }
 
    &__name {
@@ -47,73 +99,7 @@
       line-height: 1.1;
    }
 }
-.parallax-bg--hero {
-   background: url("../img/345.jpg") no-repeat;
-   background-size: cover;
-   background-position: -60px center;
-}
-.parallax-scene {
-   position: absolute;
-   inset: 0;
-   pointer-events: none;
-}
 
-.parallax-layer {
-   position: absolute;
-   will-change: transform;
-   transition: transform 0.15s ease-out;
-}
+/* Пути к вашим изображениям */
 
-.layer-laptop {
-   width: 70vw;
-   max-width: 900px;
-   bottom: 5%;
-   left: 50%;
-   transform: translateX(-50%);
-}
-
-.layer-gear {
-   width: 24vw;
-   max-width: 260px;
-   top: 50%;
-   right: 5%;
-   opacity: 0.8;
-}
-
-.layer-s-icon {
-   width: 16vw;
-   max-width: 80px;
-   bottom: 20%;
-   right: 10%;
-}
-
-.layer-cursor {
-   width: 32vw;
-   max-width: 260px;
-   bottom: 5%;
-   left: 5%;
-}
-
-@media (max-width: 425px) {
-   .herro {
-      height: 100dvh;
-   }
-   .layer-laptop {
-      width: 95vw;
-      bottom: 8%;
-   }
-   .layer-gear {
-      top: 50%;
-      right: 2%;
-      width: 120px;
-   }
-   .layer-s-icon {
-      bottom: 20%;
-      right: 6%;
-      width: 40px;
-   }
-   .layer-cursor {
-      width: 100px;
-      bottom: 10%;
-   }
-}
+/* Кнопка активации для мобильных */

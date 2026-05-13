@@ -12,60 +12,63 @@ window.addEventListener('load', () => {
 });
 
 // PARALAX - HERRO ===========================================================
-const layers = document.querySelectorAll('.parallax-layer');
-const bg = document.querySelectorAll('.parallax-bg');
+
+const layers = document.querySelectorAll('.herro-layer');
+const btn = document.getElementById('activate-gyro');
 
 function updateParallax(offsetX, offsetY) {
-    bg.forEach(bg => {
-        bg.style.transform = `scale(1.1) translate(${offsetX * 0.3}px, ${offsetY * 0.3}px)`;
-    });
-
     layers.forEach(layer => {
-        const speed = layer.getAttribute('data-speed');
-        const x = (offsetX * speed) / 5;
-        const y = (offsetY * speed) / 5;
+        const speed = parseFloat(layer.getAttribute('data-speed'));
+        
+        // Рассчитываем смещение в пикселях (интенсивность 60px)
+        const xMove = offsetX * speed * 120;
+        const yMove = offsetY * speed * 120;
 
-        if (layer.classList.contains('layer-laptop')) {
-            layer.style.transform = `translateX(calc(-50% + ${x}px)) translateY(${y}px)`;
-        } else {
-            layer.style.transform = `translate(${x}px, ${y}px)`;
-        }
+        layer.style.transform = `translate3d(${xMove}px, ${yMove}px, 0)`;
     });
 }
 
-if (window.innerWidth > 1024) {
-    document.addEventListener("mousemove", (e) => {
-        const x = (e.clientX - window.innerWidth / 2) / 50;
-        const y = (e.clientY - window.innerHeight / 2) / 50;
-        updateParallax(x, y);
-    });
-}
-
-if (window.DeviceOrientationEvent) {
-    window.addEventListener("deviceorientation", (e) => {
-        if (window.innerWidth <= 1024) {
-            const x = e.gamma * 1.1; 
-            const y = (e.beta - 30) *1.1; 
-            updateParallax(x, y);
-        }
-    });
-}
-
-if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-    document.body.addEventListener('click', function() {
-        DeviceOrientationEvent.requestPermission()
-            .then(response => {
-                if (response === 'granted') {
-                    console.log("Доступ к гироскопу разрешен");
-                }
-            })
-            .catch(console.error);
-    }, { once: true });
-}
-
-
-// SECTION SMOOTH SCROLL ===========================================================
-
-document.querySelectorAll(".panel").forEach((panel) => {
-  observer.observe(panel);
+// --- ЛОГИКА ДЛЯ ПК (МЫШЬ) ---
+window.addEventListener('mousemove', (e) => {
+    // Получаем координаты мыши относительно центра окна
+    const x = (e.clientX / window.innerWidth) - 0.5;
+    const y = (e.clientY / window.innerHeight) - 0.5;
+    
+    updateParallax(x, y);
 });
+
+// --- ЛОГИКА ДЛЯ МОБИЛЬНЫХ (ГИРОСКОП) ---
+function handleOrientation(event) {
+    // gamma: влево/вправо (-90 до 90)
+    // beta: вперед/назад (-180 до 180)
+    
+    let x = event.gamma / 45; // Нормализуем к диапазону ~ -1 до 1
+    let y = (event.beta - 45) / 45; // 45 градусов — естественный наклон в руках
+
+    // Ограничиваем значения для стабильности
+    x = Math.max(Math.min(x, 1), -1);
+    y = Math.max(Math.min(y, 1), -1);
+
+    updateParallax(x, y);
+}
+
+// Проверка разрешений для мобильных устройств
+if (window.DeviceOrientationEvent) {
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        // Это iOS (нужно нажать кнопку для разрешения)
+        btn.style.display = 'block';
+        btn.onclick = () => {
+            DeviceOrientationEvent.requestPermission()
+                .then(state => {
+                    if (state === 'granted') {
+                        window.addEventListener('deviceorientation', handleOrientation);
+                        btn.style.display = 'none';
+                    }
+                })
+                .catch(console.error);
+        };
+    } else {
+        // Это Android или старая iOS (включаем сразу)
+        window.addEventListener('deviceorientation', handleOrientation);
+    }
+}

@@ -33,7 +33,14 @@
          </header>
          <main class="main">
             <section class="herro">
-               <div class="parallax-bg parallax-bg--hero" data-speed="2"></div>
+               <div class="herro-wrapper" id="herro-scene">
+                  <div class="herro-layer layer-bg"
+                     data-speed="0.03"></div>
+                  <div class="herro-layer layer-code"
+                     data-speed="0.35"></div>
+                  <div class="herro-layer layer-dust"
+                     data-speed="0.15"></div>
+               </div>
                <div class="herro__container">
                   <div class="herro__informations">
                      <p class="herro__name">Ігор Поляков - Web Developer</p>
@@ -43,16 +50,10 @@
                         адаптивних та інтуїтивно зрозумілих сайтів. Мій стек –
                         ваш успіх у мережі.</p>
                   </div>
-                  <!-- <div class="parallax-scene">
-                     <img src="./img/notebook.png" alt="Laptop"
-                        class="parallax-layer layer-laptop" data-speed="4">
-                     <img src="./img/gear.png" alt="Gear"
-                        class="parallax-layer layer-gear" data-speed="8">
-                     <img src="./img/icon.webp" alt="S Icon"
-                        class="parallax-layer layer-s-icon" data-speed="14">
-                     <img src="./img/cursor.png" alt="Cursor"
-                        class="parallax-layer layer-cursor" data-speed="12">
-                  </div> -->
+
+                  <!-- Кнопка для iOS (появляется только если нужно разрешение) -->
+                  <button id="activate-gyro" class="gyro-btn">Активировать 3D
+                     эффект</button>
                </div>
             </section>
             <section class="about">
