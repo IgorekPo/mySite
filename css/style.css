@@ -511,22 +511,3 @@ body {
 
 /* Пути к вашим изображениям */
 /* Кнопка активации для мобильных */
-.about__container {
-  z-index: 2;
-}
-
-.works__container {
-  z-index: 2;
-}
-
-.experience__container {
-  z-index: 2;
-}
-
-.parallax-bg {
-  position: absolute;
-  width: 110%;
-  height: 110%;
-  z-index: 1;
-  will-change: transform;
-}
