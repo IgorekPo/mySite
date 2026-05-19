@@ -8,7 +8,6 @@
    justify-content: center;
    &-layer {
       position: absolute;
-      /* Увеличиваем размер, чтобы был запас для движения */
       top: -2%;
       left: -6%;
       width: 115%;
@@ -21,18 +20,33 @@
       transition: transform 0.2s cubic-bezier(0.2, 0.4, 0.3, 1);
    }
    & .layer-bg {
-      background-image: url("../img/bg-herro.jpg");
+      background-image: url("../img/herro/bg-herroPC.webp");
       z-index: 2;
    }
    & .layer-code {
-      background-image: url("../img/code-herro.png");
-      z-index: 3;
+      background-image: url("../img/herro/code-herro.webp");
       filter: drop-shadow(2px 2px 15px #fff);
+      width: 60%;
+      height: 100%;
+      left: 0;
+      z-index: 3;
    }
    & .layer-dust {
-      background-image: url("../img/light-herro.png");
+      background-image: url("../img/herro/dust-pc.webp");
       z-index: 2;
-      margin-top: 60px;
+      top: -11%;
+   }
+   @media (max-width: 768px) {
+      & .layer-bg {
+         background-image: url("../img/herro/bg-herro.webp");
+      }
+      & .layer-code {
+         background-image: url("../img/herro/code-herro.webp");
+      }
+      & .layer-dust {
+         background-image: url("../img/herro/light-herro.webp");
+         top: 9%;
+      }
    }
    & .gyro-btn {
       display: none; /* Скрыта по умолчанию */
@@ -51,14 +65,15 @@
       cursor: pointer;
    }
    &__container {
-      z-index: 2;
+      z-index: 4;
+      display: flex;
    }
 
    &__informations {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      justify-content: center;
+      padding-top: 120px;
       z-index: 10;
       color: #fff;
       z-index: 5;

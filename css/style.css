@@ -390,7 +390,6 @@ body {
 }
 .herro-layer {
   position: absolute;
-  /* Увеличиваем размер, чтобы был запас для движения */
   top: -2%;
   left: -6%;
   width: 115%;
@@ -406,19 +405,34 @@ body {
   transition: transform 0.2s cubic-bezier(0.2, 0.4, 0.3, 1), -webkit-transform 0.2s cubic-bezier(0.2, 0.4, 0.3, 1);
 }
 .herro .layer-bg {
-  background-image: url("../img/bg-herro.jpg");
+  background-image: url("../img/herro/bg-herroPC.webp");
   z-index: 2;
 }
 .herro .layer-code {
-  background-image: url("../img/code-herro.png");
-  z-index: 3;
+  background-image: url("../img/herro/code-herro.webp");
   -webkit-filter: drop-shadow(2px 2px 15px #fff);
           filter: drop-shadow(2px 2px 15px #fff);
+  width: 60%;
+  height: 100%;
+  left: 0;
+  z-index: 3;
 }
 .herro .layer-dust {
-  background-image: url("../img/light-herro.png");
+  background-image: url("../img/herro/dust-pc.webp");
   z-index: 2;
-  margin-top: 60px;
+  top: -11%;
+}
+@media (max-width: 768px) {
+  .herro .layer-bg {
+    background-image: url("../img/herro/bg-herro.webp");
+  }
+  .herro .layer-code {
+    background-image: url("../img/herro/code-herro.webp");
+  }
+  .herro .layer-dust {
+    background-image: url("../img/herro/light-herro.webp");
+    top: 9%;
+  }
 }
 .herro .gyro-btn {
   display: none; /* Скрыта по умолчанию */
@@ -439,7 +453,10 @@ body {
   cursor: pointer;
 }
 .herro__container {
-  z-index: 2;
+  z-index: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .herro__informations {
   display: -webkit-box;
@@ -450,9 +467,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding-top: 120px;
   z-index: 10;
   color: #fff;
   z-index: 5;
