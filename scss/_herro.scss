@@ -16,7 +16,6 @@
       background-position: center;
       background-repeat: no-repeat;
       will-change: transform;
-      /* Плавный переход для мягкого движения */
       transition: transform 0.2s cubic-bezier(0.2, 0.4, 0.3, 1);
    }
    & .layer-bg {
@@ -25,7 +24,6 @@
    }
    & .layer-code {
       background-image: url("../img/herro/code-herro.webp");
-      filter: drop-shadow(2px 2px 15px #fff);
       width: 60%;
       height: 100%;
       left: 0;
@@ -39,12 +37,20 @@
    @media (max-width: 768px) {
       & .layer-bg {
          background-image: url("../img/herro/bg-herro.webp");
+         background-position: left;
       }
       & .layer-code {
          background-image: url("../img/herro/code-herro.webp");
+         top: -2%;
+         left: -6%;
+         width: 115%;
+         height: 105%;
       }
       & .layer-dust {
          background-image: url("../img/herro/light-herro.webp");
+         left: -6%;
+         width: 115%;
+         height: 105%;
          top: 9%;
       }
    }
@@ -70,10 +76,11 @@
    }
 
    &__informations {
+      filter: drop-shadow(2px 2px 15px #fff);
       display: flex;
       flex-direction: column;
       gap: 20px;
-      padding-top: 120px;
+      padding-top: 150px;
       z-index: 10;
       color: #fff;
       z-index: 5;

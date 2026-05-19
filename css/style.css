@@ -206,6 +206,7 @@ section {
   padding-bottom: 10px;
   gap: 20px;
   position: relative;
+  color: #fbd784;
 }
 @media (max-width: 580px) {
   .header__container {
@@ -261,6 +262,7 @@ section {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   font-size: clamp(14px, 4vw, 26px);
+  text-shadow: 1px 1px 5px #fff;
 }
 @media (hover: hover) {
   .header__phone:hover {
@@ -281,26 +283,27 @@ section {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .header__links {
-    position: absolute;
-    top: 50vh;
-    left: 50vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    background-color: rgba(118, 118, 118, 0.624);
-    padding: 40px 60px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    width: 80vw;
+    height: 80vh;
+    padding: 40px 30px;
+    border-radius: 28px;
+    background: rgba(15, 18, 28, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.45), inset 0 0 20px rgba(255, 255, 255, 0.02);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.45), inset 0 0 20px rgba(255, 255, 255, 0.02);
     opacity: 0;
     visibility: hidden;
-    line-height: 1.1;
-    font-weight: 800;
-    -webkit-filter: drop-shadow(2px 2px 2px #000);
-    filter: drop-shadow(2px 2px 2px #000);
   }
 }
 .header__links.active {
@@ -324,7 +327,7 @@ section {
   position: relative;
   cursor: pointer;
 }
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .header__burger {
     display: block;
   }
@@ -352,7 +355,7 @@ section {
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #fff;
+  background-color: #fbd784;
   border-radius: 2px;
 }
 .header__burger span {
@@ -398,7 +401,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   will-change: transform;
-  /* Плавный переход для мягкого движения */
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.2, 0.4, 0.3, 1);
   transition: -webkit-transform 0.2s cubic-bezier(0.2, 0.4, 0.3, 1);
   transition: transform 0.2s cubic-bezier(0.2, 0.4, 0.3, 1);
@@ -410,8 +412,6 @@ body {
 }
 .herro .layer-code {
   background-image: url("../img/herro/code-herro.webp");
-  -webkit-filter: drop-shadow(2px 2px 15px #fff);
-          filter: drop-shadow(2px 2px 15px #fff);
   width: 60%;
   height: 100%;
   left: 0;
@@ -425,12 +425,20 @@ body {
 @media (max-width: 768px) {
   .herro .layer-bg {
     background-image: url("../img/herro/bg-herro.webp");
+    background-position: left;
   }
   .herro .layer-code {
     background-image: url("../img/herro/code-herro.webp");
+    top: -2%;
+    left: -6%;
+    width: 115%;
+    height: 105%;
   }
   .herro .layer-dust {
     background-image: url("../img/herro/light-herro.webp");
+    left: -6%;
+    width: 115%;
+    height: 105%;
     top: 9%;
   }
 }
@@ -459,6 +467,8 @@ body {
   display: flex;
 }
 .herro__informations {
+  -webkit-filter: drop-shadow(2px 2px 15px #fff);
+          filter: drop-shadow(2px 2px 15px #fff);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -467,7 +477,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
-  padding-top: 120px;
+  padding-top: 150px;
   z-index: 10;
   color: #fff;
   z-index: 5;

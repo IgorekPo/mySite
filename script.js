@@ -1,15 +1,23 @@
 //LOADER ===========================================================
 
+// LOADER ===========================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('loader');
+    const content = document.getElementById('content');
 
-window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
-  const content = document.getElementById('content');
-
-  setTimeout(() => {
-    loader.style.display = 'none';
-    content.style.display = 'block';
-  }, 4000); 
+    // Лоадер закроется через 4 секунды после открытия страницы, 
+    // не дожидаясь загрузки всех тяжелых фото.
+    setTimeout(() => {
+        loader.style.opacity = '0'; // Плавное исчезновение
+        loader.style.transition = 'opacity 0.5s ease';
+        
+        setTimeout(() => {
+            loader.style.display = 'none';
+            content.style.display = 'block';
+        }, 500); // Время на исчезновение
+    }, 3500); // Чуть меньше, чем длительность анимации логотипа
 });
+
 
 // PARALAX - HERRO ===========================================================
 
