@@ -1,69 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ua">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>IgorekPo</title>
-      <link rel="stylesheet" href="./css/style.css">
-      <link rel="stylesheet" href="./css/style.css?v=1.1" />
-   </head>
-   <body>
-      <div id="loader">
-         <img src="./img/logo.webp" alt="Logo" class="zoom-logo">
-      </div>
-      <div id="content" style="display: none;">
-      </div>
-      <div class="wrapper">
-         <header class="header">
-            <div class="header__container">
-               <a href="#" class="header__logo">
-                  <img src="./img/logo.webp" alt="Логотип">
-               </a>
-               <a type="tel" href="tel:+380931614471" class="header__phone">+38
-                  (093) 161-44-71</a>
-               <ul class="header__links">
-                  <li class="header__link"><a href="#about">Головна</a></li>
-                  <li class="header__link"><a href="#about">Про мене</a></li>
-                  <li class="header__link"><a href="#sites">Роботи</a></li>
-                  <li class="header__link"><a
-                        href="#experience">Досвід</a></li>
-                  <li class="header__link"><a
-                        href="#contacts">Контакти</a></li>
-               </ul>
-               <div class="header__burger">
-                  <span></span>
-               </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IgorekPo</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style.css?v=1.1" />
+  </head>
+  <body>
+    <div id="loader">
+      <img src="./img/logo.webp" alt="Logo" class="zoom-logo" />
+    </div>
+    <div id="content" style="display: none"></div>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <a href="#" class="header__logo">
+            <img src="./img/logo.webp" alt="Логотип" />
+          </a>
+          <a type="tel" href="tel:+380931614471" class="header__phone"
+            >+38 (093) 161-44-71</a
+          >
+          <ul class="header__links">
+            <li class="header__link header__link--home">
+              <a href="#home">Головна</a>
+            </li>
+            <li class="header__link header__link--about">
+              <a href="#about">Про мене</a>
+            </li>
+            <li class="header__link header__link--portfolio">
+              <a href="#portfolio">Портфоліо</a>
+            </li>
+            <li class="header__link header__link--experience">
+              <a href="#experience">Досвід</a>
+            </li>
+            <li class="header__link header__link--contacts">
+              <a href="#contacts">Контакти</a>
+            </li>
+            <li class="header__socials socials-header">
+              <ul class="socials-header__links">
+                <li class="socials-header__link">
+                  <a href="#"><img src="./img/icons/telegram.svg" alt="" /></a>
+                </li>
+                <li class="socials-header__link">
+                  <a href="#"><img src="./img/icons/viber.svg" alt="" /></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="header__burger">
+            <span></span>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="herro">
+          <div class="herro-wrapper" id="herro-scene">
+            <div class="herro-layer layer-bg" data-speed="0.1"></div>
+            <div class="herro-layer layer-code" data-speed="0.55"></div>
+            <div class="herro-layer layer-dust" data-speed="0.15"></div>
+          </div>
+          <div class="herro__container">
+            <div class="herro__informations">
+              <p class="herro__name">Ігор Поляков - Web Developer</p>
+              <h1 class="herro__title">
+                Архітектура коду та естетика інтерфейсу
+              </h1>
+              <p class="herro__text">
+                Спеціалізуюся на створенні швидких, адаптивних та інтуїтивно
+                зрозумілих сайтів. Мій стек – ваш успіх у мережі.
+              </p>
             </div>
-         </header>
-         <main class="main">
-            <section class="herro">
-               <div class="herro-wrapper" id="herro-scene">
-                  <div class="herro-layer layer-bg"
-                     data-speed="0.1"></div>
-                  <div class="herro-layer layer-code"
-                     data-speed="0.55"></div>
-                  <div class="herro-layer layer-dust"
-                     data-speed="0.15"></div>
-               </div>
-               <div class="herro__container">
-                  <div class="herro__informations">
-                     <p class="herro__name">Ігор Поляков - Web Developer</p>
-                     <h1 class="herro__title">Архітектура коду та естетика
-                        інтерфейсу</h1>
-                     <p class="herro__text">Спеціалізуюся на створенні швидких,
-                        адаптивних та інтуїтивно зрозумілих сайтів. Мій стек –
-                        ваш успіх у мережі.</p>
-                  </div>
 
-                  <!-- Кнопка для iOS (появляется только если нужно разрешение) -->
-                  <button id="activate-gyro" class="gyro-btn">Активувати 3D
-                     ефект</button>
-               </div>
-            </section>
-
-         </main>
-         <footer class="footer"></footer>
-      </div>
-      <script src="script.js"></script>
-   </body>
+            <!-- Кнопка для iOS (появляется только если нужно разрешение) -->
+            <button id="activate-gyro" class="gyro-btn">
+              Активувати 3D ефект
+            </button>
+          </div>
+        </section>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
